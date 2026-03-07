@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Autonomous RC Car (ROS-Based System) | Mahmood Alhashmi</title>
-  <meta name="description" content="Converted a standard RC car into an autonomous navigation platform for the Unmanned Vehicle System Competition (UVS26), integrating LiDAR, stereo depth sensing, distributed embedded control, and ROS-based navigation." />
+  <title>Poki | Mahmood Alhashmi</title>
+  <meta name="description" content="Poki project by Mahmood Alhashmi." />
   <style>
     :root {
       --bg: #f5f5f5;
@@ -195,14 +195,16 @@
   <main>
     <div class="shell">
       <a class="back-link" href="../index.html#projects">Back to projects</a>
-      <span class="pill">LiDAR + OAK-D + ROS autonomous navigation platform</span>
-      <h1>Autonomous RC Car (ROS-Based System)</h1>
-      <p>Converted a standard RC car into an autonomous navigation platform for the Unmanned Vehicle System Competition (UVS26), integrating LiDAR, stereo depth sensing, distributed embedded control, and ROS-based navigation.</p>
+      <span class="pill">Featured project</span>
+      <h1>Poki</h1>
+      <p>Poki project page.</p>
 
       <section class="gallery-section" aria-label="Project gallery">
         <h2>Gallery</h2>
         <div class="gallery-grid">
-          <img class="gallery-image" src="../images/autonomous-rc-car/5.jpg" alt="Autonomous RC Car (ROS-Based System) image 1" loading="lazy" />
+          <img class="gallery-image" src="../images/poki/12.jpg" alt="Poki image 1" loading="lazy" />
+          <img class="gallery-image" src="../images/poki/13.jpg" alt="Poki image 2" loading="lazy" />
+        </div>
         </div>
       </section>
 
@@ -210,30 +212,17 @@
         <article class="card details">
           <h2>Project Details</h2>
           <div class="tags">
-          <span class="tag">ROS</span>
-          <span class="tag">Jetson Orin Nano</span>
-          <span class="tag">ESP32</span>
-          <span class="tag">LiDAR</span>
-          <span class="tag">OAK-D</span>
-          <span class="tag">Pure Pursuit</span>
+            <span class="tag">Poki</span>
           </div>
-        <h3>System Architecture</h3>
-        <p>The system was divided into high-level and low-level control subsystems. A Jetson Orin Nano running ROS processed LiDAR and depth data, executed navigation algorithms, and published steering and velocity commands. A dedicated ESP32 handled steering servo control and ESC throttle control, isolating actuation from perception compute load. The perception stack used a 2D LiDAR for obstacle detection and an OAK-D depth camera for spatial awareness, with ROS nodes structured for modular debugging and tuning.</p>
-        <h3>Technical Decisions</h3>
-        <p>Follow-the-Gap was selected instead of full SLAM for reactive obstacle avoidance because it offered lower computational cost under competition constraints. High-level and low-level control were separated to reduce motor jitter and improve responsiveness. Steering remapping was calibrated from measured mechanical limits rather than assumed linear response, improving directional accuracy.</p>
-        <h3>Challenges</h3>
-        <p>Major challenges included steering asymmetry, Pure Pursuit instability from the short wheelbase, oscillation in narrow passages, and latency between perception and actuation. These were addressed through steering calibration, navigation parameter tuning, smoothing filters, and serial/ROS flow optimization.</p>
-        <h3>Results</h3>
-        <p>The final system achieved stable wall following and obstacle avoidance, eliminated steering asymmetry through calibration, reduced oscillation after tuning, and demonstrated full autonomous operation in a competition-style environment.</p>
+          <h3>Overview</h3>
+          <p>Details for this project will be added here.</p>
         </article>
 
         <aside class="card">
           <h2>Highlights</h2>
           <ul class="highlights">
-          <li>Jetson Orin Nano handled perception and navigation algorithms.</li>
-          <li>ESP32 controlled steering servo and ESC throttle.</li>
-          <li>Implemented Follow-the-Gap, Wall Following, and Pure Pursuit under embedded constraints.</li>
-          <li>Calibrated steering nonlinearity and reduced oscillation through tuning and filtering.</li>
+            <li>Project page created.</li>
+            <li>Gallery folder ready.</li>
           </ul>
           <a class="contact-btn" href="../index.html#contact">Get in touch</a>
         </aside>
