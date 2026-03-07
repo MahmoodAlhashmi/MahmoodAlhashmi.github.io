@@ -1,46 +1,696 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mahmood Alhashmi Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Mahmood Alhashmi | Portfolio</title>
+  <meta name="description" content="Portfolio of Mahmood Alhashmi - Mechatronics, Robotics, and Embedded Systems projects." />
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0d1b2d;
+      --card: rgba(255,255,255,0.06);
+      --card-strong: rgba(255,255,255,0.08);
+      --text: #e8eef7;
+      --muted: #9cb0c8;
+      --line: rgba(255,255,255,0.12);
+      --accent: #52e0d0;
+      --accent-dark: #16323a;
+      --tag: rgba(82,224,208,0.12);
+      --shadow: 0 12px 30px rgba(0,0,0,0.25);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(82,224,208,0.12), transparent 30%),
+        radial-gradient(circle at top right, rgba(74,144,226,0.10), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+      background: rgba(7, 17, 31, 0.75);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.4px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .hero {
+      padding: 82px 0 48px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid rgba(82,224,208,0.28);
+      background: rgba(82,224,208,0.10);
+      color: #baf5ee;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 5vw, 4.7rem);
+      line-height: 1.05;
+      letter-spacing: -1px;
+    }
+
+    .hero p {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 760px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 16px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #06222a;
+      box-shadow: 0 10px 24px rgba(82,224,208,0.18);
+    }
+
+    .btn-primary:hover { transform: translateY(-1px); }
+
+    .btn-secondary {
+      border-color: var(--line);
+      color: var(--text);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .hero-card {
+      border: 1px solid var(--line);
+      background: linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border-radius: 30px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      margin: 0 0 14px;
+      font-size: 1.2rem;
+    }
+
+    .stat {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      border-radius: 18px;
+      padding: 14px 16px;
+      margin-top: 12px;
+    }
+
+    .stat small {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    section {
+      padding: 52px 0;
+    }
+
+    .section-head {
+      margin-bottom: 28px;
+    }
+
+    .section-head h2 {
+      margin: 0 0 8px;
+      font-size: 2rem;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .about-card,
+    .skill-card,
+    .project-card,
+    .contact-card {
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .about-card {
+      padding: 26px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .skill-card { padding: 22px; }
+
+    .skill-card h3 {
+      margin: 0 0 14px;
+      font-size: 1.08rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      background: var(--tag);
+      color: #c7faf4;
+      border: 1px solid rgba(82,224,208,0.18);
+      padding: 7px 11px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .project-card {
+      padding: 22px;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-3px);
+      background: var(--card-strong);
+    }
+
+    .project-banner {
+      min-height: 160px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(140deg, #10243b, #0b1627 55%, #133841);
+      padding: 20px;
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 18px;
+    }
+
+    .project-banner small {
+      display: block;
+      color: #b9ecf1;
+      margin-bottom: 8px;
+    }
+
+    .project-banner h3 {
+      margin: 0;
+      font-size: 1.4rem;
+      line-height: 1.2;
+    }
+
+    .project-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .project-details {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .project-details li {
+      position: relative;
+      padding-left: 18px;
+      margin-top: 10px;
+      color: #d8e3ef;
+    }
+
+    .project-details li::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      position: absolute;
+      left: 0;
+      top: 11px;
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 20px;
+    }
+
+    .contact-card {
+      padding: 24px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .contact-item {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .contact-item small {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 5px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      padding: 24px 0 36px;
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .contact-wrap,
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        padding-top: 54px;
+      }
+
+      section {
+        padding: 42px 0;
+      }
+
+      .project-card,
+      .skill-card,
+      .about-card,
+      .contact-card,
+      .hero-card {
+        border-radius: 18px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Mahmood Alhashmi</h1>
-    <p>Mechatronics | Robotics | Embedded Systems</p>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Mahmood Alhashmi</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="pill">Mechatronics • Robotics • Embedded Systems</span>
+        <h1>Building intelligent systems that connect software with real-world hardware.</h1>
+        <p>
+          I design robotics, embedded systems, autonomous platforms, and mechatronic prototypes with a focus on practical engineering, system integration, and real-world testing.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-secondary" href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Engineering Focus</h3>
+        <div class="stat">
+          <small>Primary Areas</small>
+          Robotics, embedded control, intelligent automation, and autonomous systems.
+        </div>
+        <div class="stat">
+          <small>Strength</small>
+          Mechanical, electrical, and software integration in complete working prototypes.
+        </div>
+        <div class="stat">
+          <small>Approach</small>
+          Design, prototype, wire, test, calibrate, and refine.
+        </div>
+      </div>
+    </div>
   </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>I build robotics, embedded systems, and mechatronic prototypes.</p>
-  </section>
-
-  <section>
-    <h2>Projects</h2>
-
-    <div class="project">
-      <h3>Autonomous RC Car</h3>
-      <p>ROS-based autonomous navigation platform using LiDAR, OAK-D, and ESP32 control.</p>
-    </div>
-
-    <div class="project">
-      <h3>Quadruped Robot</h3>
-      <p>12-DOF quadruped with inverse kinematics and IMU integration.</p>
-    </div>
-
-    <div class="project">
-      <h3>Alnaham</h3>
-      <p>LoRa-based maritime emergency communication device with GPS and solar power.</p>
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <h2>About</h2>
+      </div>
+      <div class="about-card">
+        I am a mechatronics-focused builder with experience across robotics, embedded systems, computer vision, automation, and machine design. My work includes autonomous vehicles, quadruped robots, assistive wearables, maritime communication devices, interactive educational systems, and custom mechanical prototypes. I enjoy turning engineering ideas into complete working systems that combine electronics, control, software, and physical design.
+      </div>
     </div>
   </section>
 
-  <section>
-    <h2>Contact</h2>
-    <p>Email: your@email.com</p>
-    <p>GitHub: github.com/yourusername</p>
+  <section id="skills">
+    <div class="container">
+      <div class="section-head">
+        <h2>Skills</h2>
+        <p>Core areas and tools used across my projects.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Robotics</h3>
+          <div class="tags">
+            <span class="tag">ROS</span>
+            <span class="tag">Inverse Kinematics</span>
+            <span class="tag">Teleoperation</span>
+            <span class="tag">Autonomous Navigation</span>
+            <span class="tag">Holonomic Drive</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3>Embedded Systems</h3>
+          <div class="tags">
+            <span class="tag">ESP32</span>
+            <span class="tag">ATmega8</span>
+            <span class="tag">Arduino</span>
+            <span class="tag">PWM</span>
+            <span class="tag">I²C</span>
+            <span class="tag">UART</span>
+            <span class="tag">EEPROM</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3>AI & Vision</h3>
+          <div class="tags">
+            <span class="tag">Object Detection</span>
+            <span class="tag">Face Recognition</span>
+            <span class="tag">OCR</span>
+            <span class="tag">Custom ML Models</span>
+            <span class="tag">OAK-D</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3>Mechanical Design</h3>
+          <div class="tags">
+            <span class="tag">CAD</span>
+            <span class="tag">Mechanism Design</span>
+            <span class="tag">Acrylic Prototyping</span>
+            <span class="tag">Servo Integration</span>
+            <span class="tag">Conveyor Systems</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3>Tools</h3>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">C/C++</span>
+            <span class="tag">Jetson Orin Nano</span>
+            <span class="tag">LoRa</span>
+            <span class="tag">LiDAR</span>
+            <span class="tag">GitHub</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3>Engineering Style</h3>
+          <div class="tags">
+            <span class="tag">System Integration</span>
+            <span class="tag">Rapid Prototyping</span>
+            <span class="tag">Testing & Calibration</span>
+            <span class="tag">Real-Time Control</span>
+            <span class="tag">Modular Design</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-head">
+        <h2>Selected Projects</h2>
+        <p>A collection of robotics, embedded, automation, and assistive technology projects.</p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-banner"><div><small>LiDAR + OAK-D + ROS autonomous navigation platform</small><h3>Autonomous RC Car (ROS-Based System)</h3></div></div>
+          <p>Converted a standard RC car into an autonomous navigation platform for the Unmanned Vehicle System Competition (UVS26), integrating LiDAR, stereo depth sensing, distributed embedded control, and ROS-based navigation.</p>
+          <div class="tags" style="margin-top:16px;">
+            <span class="tag">ROS</span><span class="tag">Jetson Orin Nano</span><span class="tag">ESP32</span><span class="tag">LiDAR</span><span class="tag">OAK-D</span>
+          </div>
+          <ul class="project-details">
+            <li>Jetson Orin Nano handled perception and navigation algorithms.</li>
+            <li>ESP32 controlled steering servo and ESC throttle.</li>
+            <li>Implemented reactive and path-tracking navigation under embedded constraints.</li>
+            <li>Calibrated steering asymmetry and reduced oscillation through tuning.</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <div class="project-banner"><div><small>12-DOF quadruped with Cartesian foot control</small><h3>Quadruped Robot with Inverse Kinematics Control</h3></div></div>
+          <p>Designed and built a 12-DOF quadruped robot using analytical inverse kinematics to enable position-level foot control, body pose transformations, and IMU-based orientation sensing.</p>
+          <div class="tags" style="margin-top:16px;">
+            <span class="tag">ESP32</span><span class="tag">Inverse Kinematics</span><span class="tag">IMU</span><span class="tag">Servo Control</span>
+          </div>
+          <ul class="project-details">
+            <li>Implemented analytical IK for direct foot placement in Cartesian space.</li>
+            <li>Added body translation and rotation control for posture adjustment.</li>
+            <li>Synchronized twelve servos while minimizing visible jitter.</li>
+            <li>Integrated IMU sensing for orientation measurement and future stabilization.</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <div class="project-banner"><div><small>Holonomic base + dual-arm teleoperation over ESP-NOW</small><h3>Mobile Manipulator Robot with Wireless Master Controller</h3></div></div>
+          <p>Built a distributed robotic platform consisting of a mecanum-wheel mobile base, dual robotic arms, and a wireless master controller with encoder-based arm mirroring for intuitive teleoperation.</p>
+          <div class="tags" style="margin-top:16px;">
+            <span class="tag">ESP32</span><span class="tag">ESP-NOW</span><span class="tag">Mecanum Wheels</span><span class="tag">Rotary Encoders</span>
+          </div>
+          <ul class="project-details">
+            <li>Wireless controller used joystick input and physical arm encoders for mirroring.</li>
+            <li>Dedicated controllers separated base motion from manipulation control.</li>
+            <li>Enabled real-time teleoperation with modular multi-ESP architecture.</li>
+            <li>Improved reliability by reducing timing conflicts across subsystems.</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <div class="project-banner"><div><small>Wearable assistive device with vision, haptics, and audio</small><h3>Basirah – Smart Glasses for the Visually Impaired</h3></div></div>
+          <p>Developed a wearable assistive device that improves environmental awareness for visually impaired users through computer vision, distance sensing, haptic alerts, and bone-conduction audio.</p>
+          <div class="tags" style="margin-top:16px;">
+            <span class="tag">Computer Vision</span><span class="tag">Embedded AI</span><span class="tag">Wearables</span><span class="tag">Haptics</span>
+          </div>
+          <ul class="project-details">
+            <li>Supports object detection, face recognition, and text recognition on-device.</li>
+            <li>Uses proximity sensing to detect nearby obstacles.</li>
+            <li>Combines audio and haptic feedback to improve usability.</li>
+            <li>Designed for privacy and independence without cloud dependency.</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <div class="project-banner"><div><small>Emergency beacon for fishermen, boats, and offshore use</small><h3>Alnaham – LoRa-Based Maritime Emergency Communication Device</h3></div></div>
+          <p>Designed a maritime safety device that transmits GPS position and emergency alerts to a ground station using LoRa, with solar charging, onboard display, and emergency buttons.</p>
+          <div class="tags" style="margin-top:16px;">
+            <span class="tag">LoRa</span><span class="tag">GPS</span><span class="tag">Solar Power</span><span class="tag">ESP32</span><span class="tag">Python</span>
+          </div>
+          <ul class="project-details">
+            <li>Sends GPS updates every 30 seconds during normal operation.</li>
+            <li>Immediately transmits location and emergency type when a button is pressed.</li>
+            <li>Includes battery, solar charging, environmental sensing, and status display.</li>
+            <li>Ground station processes incoming data in a Python application.</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <div class="project-banner"><div><small>Physical mechanism linked to live donation progress</small><h3>Donation-Progress Automated Door System</h3></div></div>
+          <p>Built an automated door system connected to a donation kiosk, where the door opens proportionally as the fundraising total increases in real time.</p>
+          <div class="tags" style="margin-top:16px;">
+            <span class="tag">ESP32</span><span class="tag">Relays</span><span class="tag">Limit Switches</span><span class="tag">Automation</span>
+          </div>
+          <ul class="project-details">
+            <li>A kiosk-side controller transmitted fundraising progress to the door mechanism.</li>
+            <li>A second controller handled motor direction and calibration.</li>
+            <li>Used startup calibration to establish a repeatable position reference.</li>
+            <li>Successfully deployed in a live fundraising event environment.</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <div class="project-banner"><div><small>Automated cleaning, drying, inspection, and packaging prototype</small><h3>Date Processing Conveyor Line</h3></div></div>
+          <p>Designed, modeled, wired, and tested an automated acrylic date processing line that feeds, cleans, dries, inspects, fills, and stamps packaged dates.</p>
+          <div class="tags" style="margin-top:16px;">
+            <span class="tag">Machine Design</span><span class="tag">Automation</span><span class="tag">Computer Vision</span><span class="tag">ML</span>
+          </div>
+          <ul class="project-details">
+            <li>Used an Archimedes screw for controlled feeding from storage to conveyor.</li>
+            <li>Integrated cleaning, drying, and packaging stages into one working system.</li>
+            <li>Added AI-based inspection with a custom model to classify good and defective dates.</li>
+            <li>Included interactive filling and packaging steps for children.</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <div class="project-banner"><div><small>Configurable embedded classroom learning board</small><h3>Educational Q&A Board for Teachers</h3></div></div>
+          <p>Developed an embedded educational board where teachers configure correct answers using switches, and students connect questions to answers using a wire to receive immediate visual feedback.</p>
+          <div class="tags" style="margin-top:16px;">
+            <span class="tag">Arduino Nano</span><span class="tag">I²C</span><span class="tag">PCF8574</span><span class="tag">Educational Hardware</span>
+          </div>
+          <ul class="project-details">
+            <li>Supports four questions and four answers with configurable mappings.</li>
+            <li>Detects physical question-to-answer connections and validates them electronically.</li>
+            <li>Used I²C expansion instead of direct switch wiring to solve pin limitations.</li>
+            <li>Designed to be reusable, robust, and classroom-friendly.</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <div class="project-banner"><div><small>Register-level embedded game with timers, ADC, EEPROM, and I²C</small><h3>Reaction Time Game – ATmega8 Embedded System</h3></div></div>
+          <p>Built a reaction time measurement system around the ATmega8 that integrates analog input, digital I/O, timers, interrupts, PWM, EEPROM, I²C communication, and UART debugging into one embedded application.</p>
+          <div class="tags" style="margin-top:16px;">
+            <span class="tag">ATmega8</span><span class="tag">Embedded C</span><span class="tag">ADC</span><span class="tag">PWM</span><span class="tag">EEPROM</span>
+          </div>
+          <ul class="project-details">
+            <li>Measures reaction time between LED stimulus and user response.</li>
+            <li>Uses hardware timers for accuracy and PWM for servo indication.</li>
+            <li>Stores high score in EEPROM and adjusts difficulty using a potentiometer.</li>
+            <li>Demonstrates stable real-time behavior using direct register-level programming.</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <div class="project-banner"><div><small>AI-based target tracking with 2-axis aiming and launch control</small><h3>Autonomous Tracking Turret with Foam Ball Launcher</h3></div></div>
+          <p>Developed an autonomous turret that detects and tracks a moving person, aligns in real time, and launches foam balls through a coordinated perception-to-actuation system.</p>
+          <div class="tags" style="margin-top:16px;">
+            <span class="tag">AI Tracking</span><span class="tag">Servo Control</span><span class="tag">BLDC</span><span class="tag">Mechatronics</span>
+          </div>
+          <ul class="project-details">
+            <li>Used AI to generate real-time target tracking commands.</li>
+            <li>Implemented yaw and pitch aiming with servo motors.</li>
+            <li>Used BLDC motors and a rack-and-pinion feeder for projectile launch.</li>
+            <li>Focused on synchronization between perception, aiming, loading, and firing.</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <div class="project-banner"><div><small>High-torque autonomous competition robot</small><h3>Sumo Robot – 2025 Competition</h3></div></div>
+          <p>Designed and built an autonomous sumo robot for the 2025 Sumo Robot Competition with edge detection, opponent sensing, and high pushing torque in a compact durable chassis.</p>
+          <div class="tags" style="margin-top:16px;">
+            <span class="tag">ESP32</span><span class="tag">IR Sensors</span><span class="tag">Motor Drivers</span><span class="tag">Competitive Robotics</span>
+          </div>
+          <ul class="project-details">
+            <li>Used worm gear DC motors for high torque and resistance to back-driving.</li>
+            <li>Implemented state-based control for edge avoidance and opponent engagement.</li>
+            <li>Handled high-current demands with robust motor drivers.</li>
+            <li>Optimized traction, durability, and fast reaction under competition conditions.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <p>Replace the placeholders below with your real contact links before publishing.</p>
+      </div>
+      <div class="contact-wrap">
+        <div class="contact-card">
+          <h3 style="margin-top:0;">Let’s connect</h3>
+          <p style="color: var(--muted); margin: 0;">
+            I’m open to internships, technical collaborations, engineering projects, and opportunities related to robotics, mechatronics, and embedded systems.
+          </p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-list">
+            <div class="contact-item"><small>Email</small>your.email@example.com</div>
+            <div class="contact-item"><small>GitHub</small>github.com/yourusername</div>
+            <div class="contact-item"><small>LinkedIn</small>linkedin.com/in/yourprofile</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">© 2026 Mahmood Alhashmi. Built as a static GitHub Pages portfolio.</div>
+  </footer>
 </body>
 </html>
