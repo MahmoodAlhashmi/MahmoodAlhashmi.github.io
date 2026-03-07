@@ -1,135 +1,129 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Mahmood Alhashmi | Portfolio</title><meta name="description" content="Portfolio of Mahmood Alhashmi - Mechatronics, Robotics, and Embedded Systems projects."/>
-<link rel="stylesheet" href="style.css"/></head><body>
-  <nav class="nav">
-    <div class="container nav-inner">
-      <div class="brand">Mahmood Alhashmi</div>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mahmood Alhashmi</title>
+  <meta name="description" content="Mahmood Alhashmi | Portfolio" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #555555;
+      --line: #e6e6e6;
+      --accent: #0f766e;
+      --accent-hover: #0b5f59;
+    }
 
-<header class="hero"><div class="container hero-grid"><div>
-<span class="pill">Mechatronics • Robotics • Embedded Systems</span>
-<h1>Building intelligent systems that connect software with real-world hardware.</h1>
-<p>I design robotics, embedded systems, autonomous platforms, and mechatronic prototypes with a focus on practical engineering, system integration, and real-world testing.</p>
-<div class="hero-actions"><a class="btn btn-primary" href="#projects">View Projects</a><a class="btn btn-secondary" href="#contact">Contact</a><a class="btn btn-secondary" href="Mahmood_Alhashmi_CV.pdf" download>Download CV</a></div>
-<div class="cv-note">Place your CV PDF in the same folder as <strong>index.html</strong> and name it <strong>Mahmood_Alhashmi_CV.pdf</strong>.</div>
-</div><div class="hero-card"><h3>Engineering Focus</h3>
-<div class="stat"><small>Primary Areas</small>Robotics, embedded control, intelligent automation, and autonomous systems.</div>
-<div class="stat"><small>Strength</small>Mechanical, electrical, and software integration in complete working prototypes.</div>
-<div class="stat"><small>Approach</small>Design, prototype, wire, test, calibrate, and refine.</div>
-</div></div></header>
-<section id="about"><div class="container"><div class="section-head"><h2>About</h2></div><div class="about-card">I am a mechatronics-focused builder with experience across robotics, embedded systems, computer vision, automation, and machine design. My work includes autonomous vehicles, quadruped robots, assistive wearables, maritime communication devices, interactive educational systems, and custom mechanical prototypes. I enjoy turning engineering ideas into complete working systems that combine electronics, control, software, and physical design.</div></div></section>
-<section id="skills"><div class="container"><div class="section-head"><h2>Skills</h2><p>Core areas and tools used across my projects.</p></div><div class="skills-grid">
-<div class="skill-card"><h3>Robotics</h3><div class="tags"><span class="tag">ROS</span><span class="tag">Inverse Kinematics</span><span class="tag">Teleoperation</span><span class="tag">Autonomous Navigation</span><span class="tag">Holonomic Drive</span></div></div>
-<div class="skill-card"><h3>Embedded Systems</h3><div class="tags"><span class="tag">ESP32</span><span class="tag">ATmega8</span><span class="tag">Arduino</span><span class="tag">PWM</span><span class="tag">I²C</span><span class="tag">UART</span><span class="tag">EEPROM</span></div></div>
-<div class="skill-card"><h3>AI & Vision</h3><div class="tags"><span class="tag">Object Detection</span><span class="tag">Face Recognition</span><span class="tag">OCR</span><span class="tag">Custom ML Models</span><span class="tag">OAK-D</span></div></div>
-<div class="skill-card"><h3>Mechanical Design</h3><div class="tags"><span class="tag">CAD</span><span class="tag">Mechanism Design</span><span class="tag">Acrylic Prototyping</span><span class="tag">Servo Integration</span><span class="tag">Conveyor Systems</span></div></div>
-<div class="skill-card"><h3>Tools</h3><div class="tags"><span class="tag">Python</span><span class="tag">C/C++</span><span class="tag">Jetson Orin Nano</span><span class="tag">LoRa</span><span class="tag">LiDAR</span><span class="tag">GitHub</span></div></div>
-<div class="skill-card"><h3>Engineering Style</h3><div class="tags"><span class="tag">System Integration</span><span class="tag">Rapid Prototyping</span><span class="tag">Testing & Calibration</span><span class="tag">Real-Time Control</span><span class="tag">Modular Design</span></div></div>
-</div></div></section>
-<section id="projects"><div class="container"><div class="section-head"><h2>Selected Projects</h2><p>A collection of robotics, embedded, automation, and assistive technology projects. Each project has its own page, image, and technical summary.</p></div><div class="projects-grid">
-<article class="project-card">
-  <a href="projects/autonomous-rc-car.html"><img class="project-image" src="images/autonomous-rc-car.svg" alt="Autonomous RC Car (ROS-Based System) preview"></a>
-  <div class="project-banner"><div><small>LiDAR + OAK-D + ROS autonomous navigation platform</small><h3>Autonomous RC Car (ROS-Based System)</h3></div></div>
-  <p>Converted a standard RC car into an autonomous navigation platform for the Unmanned Vehicle System Competition (UVS26), integrating LiDAR, stereo depth sensing, distributed embedded control, and ROS-based navigation.</p>
-  <div class="tags" style="margin-top:16px;"><span class="tag">ROS</span><span class="tag">Jetson Orin Nano</span><span class="tag">ESP32</span><span class="tag">LiDAR</span><span class="tag">OAK-D</span><span class="tag">Pure Pursuit</span></div>
-  <ul class="project-details"><li>Jetson Orin Nano handled perception and navigation algorithms.</li><li>ESP32 controlled steering servo and ESC throttle.</li><li>Implemented Follow-the-Gap, Wall Following, and Pure Pursuit under embedded constraints.</li><li>Calibrated steering nonlinearity and reduced oscillation through tuning and filtering.</li></ul>
-  <div style="margin-top:20px;"><a class="btn btn-secondary" href="projects/autonomous-rc-car.html">Read Full Project</a></div>
-</article>
-<article class="project-card">
-  <a href="projects/quadruped-ik.html"><img class="project-image" src="images/quadruped-ik.svg" alt="Quadruped Robot with Inverse Kinematics Control preview"></a>
-  <div class="project-banner"><div><small>12-DOF quadruped with Cartesian foot control</small><h3>Quadruped Robot with Inverse Kinematics Control</h3></div></div>
-  <p>Designed and built a 12-DOF quadruped robot using analytical inverse kinematics to enable position-level foot control, body pose transformations, and IMU-based orientation sensing.</p>
-  <div class="tags" style="margin-top:16px;"><span class="tag">ESP32</span><span class="tag">Inverse Kinematics</span><span class="tag">IMU</span><span class="tag">Servo Control</span><span class="tag">Embedded Systems</span></div>
-  <ul class="project-details"><li>Implemented analytical IK for direct foot placement in Cartesian space.</li><li>Added body translation and rotation control for posture adjustment.</li><li>Synchronized twelve servos while minimizing visible jitter.</li><li>Integrated IMU sensing for orientation measurement and future stabilization.</li></ul>
-  <div style="margin-top:20px;"><a class="btn btn-secondary" href="projects/quadruped-ik.html">Read Full Project</a></div>
-</article>
-<article class="project-card">
-  <a href="projects/mobile-manipulator.html"><img class="project-image" src="images/mobile-manipulator.svg" alt="Mobile Manipulator Robot with Wireless Master Controller preview"></a>
-  <div class="project-banner"><div><small>Holonomic base + dual-arm teleoperation over ESP-NOW</small><h3>Mobile Manipulator Robot with Wireless Master Controller</h3></div></div>
-  <p>Built a distributed robotic platform consisting of a mecanum-wheel mobile base, dual robotic arms, and a wireless master controller with encoder-based arm mirroring for intuitive teleoperation.</p>
-  <div class="tags" style="margin-top:16px;"><span class="tag">ESP32</span><span class="tag">ESP-NOW</span><span class="tag">Mecanum Wheels</span><span class="tag">Teleoperation</span><span class="tag">Rotary Encoders</span></div>
-  <ul class="project-details"><li>Wireless controller used joystick input and physical arm encoders for mirroring.</li><li>Dedicated controllers separated base motion from manipulation control.</li><li>Enabled real-time teleoperation with modular multi-ESP architecture.</li><li>Improved reliability by reducing timing conflicts across subsystems.</li></ul>
-  <div style="margin-top:20px;"><a class="btn btn-secondary" href="projects/mobile-manipulator.html">Read Full Project</a></div>
-</article>
-<article class="project-card">
-  <a href="projects/basirah.html"><img class="project-image" src="images/basirah.svg" alt="Basirah – Smart Glasses for the Visually Impaired preview"></a>
-  <div class="project-banner"><div><small>Wearable assistive device with vision, haptics, and audio</small><h3>Basirah – Smart Glasses for the Visually Impaired</h3></div></div>
-  <p>Developed a wearable assistive device that improves environmental awareness for visually impaired users through computer vision, distance sensing, haptic alerts, and bone-conduction audio.</p>
-  <div class="tags" style="margin-top:16px;"><span class="tag">Computer Vision</span><span class="tag">Embedded AI</span><span class="tag">Haptics</span><span class="tag">Wearables</span><span class="tag">Object Detection</span></div>
-  <ul class="project-details"><li>Supports object detection, face recognition, and text recognition on-device.</li><li>Uses proximity sensing to detect nearby obstacles.</li><li>Combines audio and haptic feedback to improve usability.</li><li>Designed for privacy and independence without cloud dependency.</li></ul>
-  <div style="margin-top:20px;"><a class="btn btn-secondary" href="projects/basirah.html">Read Full Project</a></div>
-</article>
-<article class="project-card">
-  <a href="projects/alnaham.html"><img class="project-image" src="images/alnaham.svg" alt="Alnaham – LoRa-Based Maritime Emergency Communication Device preview"></a>
-  <div class="project-banner"><div><small>Emergency beacon for fishermen, boats, and offshore use</small><h3>Alnaham – LoRa-Based Maritime Emergency Communication Device</h3></div></div>
-  <p>Designed a maritime safety device that transmits GPS position and emergency alerts to a ground station using LoRa, with solar charging, onboard display, and emergency buttons.</p>
-  <div class="tags" style="margin-top:16px;"><span class="tag">LoRa</span><span class="tag">GPS</span><span class="tag">ESP32</span><span class="tag">Solar Power</span><span class="tag">Python</span></div>
-  <ul class="project-details"><li>Sends GPS updates every 30 seconds during normal operation.</li><li>Immediately transmits location and emergency type when a button is pressed.</li><li>Includes battery, solar charging, environmental sensing, and status display.</li><li>Ground station processes incoming data in a Python application.</li></ul>
-  <div style="margin-top:20px;"><a class="btn btn-secondary" href="projects/alnaham.html">Read Full Project</a></div>
-</article>
-<article class="project-card">
-  <a href="projects/donation-progress-door.html"><img class="project-image" src="images/donation-progress-door.svg" alt="Donation-Progress Automated Door System preview"></a>
-  <div class="project-banner"><div><small>Physical mechanism linked to live donation progress</small><h3>Donation-Progress Automated Door System</h3></div></div>
-  <p>Built an automated door system connected to a donation kiosk, where the door opens proportionally as the fundraising total increases in real time.</p>
-  <div class="tags" style="margin-top:16px;"><span class="tag">ESP32</span><span class="tag">Relays</span><span class="tag">Limit Switches</span><span class="tag">Automation</span><span class="tag">Interactive Installation</span></div>
-  <ul class="project-details"><li>A kiosk-side controller transmitted fundraising progress to the door mechanism.</li><li>A second controller handled motor direction and calibration.</li><li>Used startup calibration to establish a repeatable position reference.</li><li>Successfully deployed in a live fundraising event environment.</li></ul>
-  <div style="margin-top:20px;"><a class="btn btn-secondary" href="projects/donation-progress-door.html">Read Full Project</a></div>
-</article>
-<article class="project-card">
-  <a href="projects/date-processing-line.html"><img class="project-image" src="images/date-processing-line.svg" alt="Date Processing Conveyor Line preview"></a>
-  <div class="project-banner"><div><small>Automated cleaning, drying, inspection, and packaging prototype</small><h3>Date Processing Conveyor Line</h3></div></div>
-  <p>Designed, modeled, wired, and tested an automated acrylic date processing line that feeds, cleans, dries, inspects, fills, and stamps packaged dates.</p>
-  <div class="tags" style="margin-top:16px;"><span class="tag">Machine Design</span><span class="tag">Automation</span><span class="tag">Computer Vision</span><span class="tag">ML</span><span class="tag">Embedded Systems</span></div>
-  <ul class="project-details"><li>Used an Archimedes screw for controlled feeding from storage to conveyor.</li><li>Integrated cleaning, drying, and packaging stages into one working system.</li><li>Added AI-based inspection with a custom model to classify good and defective dates.</li><li>Included interactive filling and packaging steps for children.</li></ul>
-  <div style="margin-top:20px;"><a class="btn btn-secondary" href="projects/date-processing-line.html">Read Full Project</a></div>
-</article>
-<article class="project-card">
-  <a href="projects/educational-qna-board.html"><img class="project-image" src="images/educational-qna-board.svg" alt="Educational Q&amp;A Board for Teachers preview"></a>
-  <div class="project-banner"><div><small>Configurable embedded classroom learning board</small><h3>Educational Q&amp;A Board for Teachers</h3></div></div>
-  <p>Developed an embedded educational board where teachers configure correct answers using switches, and students connect questions to answers using a wire to receive immediate visual feedback.</p>
-  <div class="tags" style="margin-top:16px;"><span class="tag">Arduino Nano</span><span class="tag">I²C</span><span class="tag">PCF8574</span><span class="tag">Embedded Design</span><span class="tag">Educational Hardware</span></div>
-  <ul class="project-details"><li>Supports four questions and four answers with configurable mappings.</li><li>Detects physical question-to-answer connections and validates them electronically.</li><li>Used I²C expansion instead of direct switch wiring to solve pin limitations.</li><li>Designed to be reusable, robust, and classroom-friendly.</li></ul>
-  <div style="margin-top:20px;"><a class="btn btn-secondary" href="projects/educational-qna-board.html">Read Full Project</a></div>
-</article>
-<article class="project-card">
-  <a href="projects/reaction-time-game.html"><img class="project-image" src="images/reaction-time-game.svg" alt="Reaction Time Game – ATmega8 Embedded System preview"></a>
-  <div class="project-banner"><div><small>Register-level embedded game with timers, ADC, EEPROM, and I²C</small><h3>Reaction Time Game – ATmega8 Embedded System</h3></div></div>
-  <p>Built a reaction time measurement system around the ATmega8 that integrates analog input, digital I/O, timers, interrupts, PWM, EEPROM, I²C communication, and UART debugging into one embedded application.</p>
-  <div class="tags" style="margin-top:16px;"><span class="tag">ATmega8</span><span class="tag">Embedded C</span><span class="tag">ADC</span><span class="tag">PWM</span><span class="tag">EEPROM</span><span class="tag">I²C</span></div>
-  <ul class="project-details"><li>Measures reaction time between LED stimulus and user response.</li><li>Uses hardware timers for accuracy and PWM for servo indication.</li><li>Stores high score in EEPROM and adjusts difficulty using a potentiometer.</li><li>Demonstrates stable real-time behavior using direct register-level programming.</li></ul>
-  <div style="margin-top:20px;"><a class="btn btn-secondary" href="projects/reaction-time-game.html">Read Full Project</a></div>
-</article>
-<article class="project-card">
-  <a href="projects/autonomous-turret.html"><img class="project-image" src="images/autonomous-turret.svg" alt="Autonomous Tracking Turret with Foam Ball Launcher preview"></a>
-  <div class="project-banner"><div><small>AI-based target tracking with 2-axis aiming and launch control</small><h3>Autonomous Tracking Turret with Foam Ball Launcher</h3></div></div>
-  <p>Developed an autonomous turret that detects and tracks a moving person, aligns in real time, and launches foam balls through a coordinated perception-to-actuation system.</p>
-  <div class="tags" style="margin-top:16px;"><span class="tag">AI Tracking</span><span class="tag">Servo Control</span><span class="tag">BLDC</span><span class="tag">Mechatronics</span><span class="tag">Embedded Control</span></div>
-  <ul class="project-details"><li>Used AI to generate real-time target tracking commands.</li><li>Implemented yaw and pitch aiming with servo motors.</li><li>Used BLDC motors and a rack-and-pinion feeder for projectile launch.</li><li>Focused on synchronization between perception, aiming, loading, and firing.</li></ul>
-  <div style="margin-top:20px;"><a class="btn btn-secondary" href="projects/autonomous-turret.html">Read Full Project</a></div>
-</article>
-<article class="project-card">
-  <a href="projects/sumo-robot.html"><img class="project-image" src="images/sumo-robot.svg" alt="Sumo Robot – 2025 Competition preview"></a>
-  <div class="project-banner"><div><small>High-torque autonomous competition robot</small><h3>Sumo Robot – 2025 Competition</h3></div></div>
-  <p>Designed and built an autonomous sumo robot for the 2025 Sumo Robot Competition with edge detection, opponent sensing, and high pushing torque in a compact durable chassis.</p>
-  <div class="tags" style="margin-top:16px;"><span class="tag">ESP32</span><span class="tag">IR Sensors</span><span class="tag">Motor Drivers</span><span class="tag">Autonomous Logic</span><span class="tag">Competitive Robotics</span></div>
-  <ul class="project-details"><li>Used worm gear DC motors for high torque and resistance to back-driving.</li><li>Implemented state-based control for edge avoidance and opponent engagement.</li><li>Handled high-current demands with robust motor drivers.</li><li>Optimized traction, durability, and fast reaction under competition conditions.</li></ul>
-  <div style="margin-top:20px;"><a class="btn btn-secondary" href="projects/sumo-robot.html">Read Full Project</a></div>
-</article></div></div></section>
-<section id="contact"><div class="container"><div class="section-head"><h2>Contact</h2><p>Get in touch for internships, technical collaborations, and engineering opportunities.</p></div>
-<div class="contact-wrap"><div class="contact-card"><h3 style="margin-top:0;">Let’s connect</h3><p class="muted">I’m open to internships, technical collaborations, engineering projects, and opportunities related to robotics, mechatronics, and embedded systems.</p></div>
-<div class="contact-card"><div class="contact-list">
-<div class="contact-item"><small>Email</small><a class="link" href="mailto:mahmoodalhashmi.05@gmail.com">mahmoodalhashmi.05@gmail.com</a></div>
-<div class="contact-item"><small>Phone</small><a class="link" href="tel:+96895430531">+968 95430531</a></div>
-<div class="contact-item"><small>GitHub</small><a class="link" href="https://github.com/MahmoodAlhashmi" target="_blank" rel="noopener noreferrer">https://github.com/MahmoodAlhashmi</a></div>
-<div class="contact-item"><small>LinkedIn</small><a class="link" href="https://www.linkedin.com/in/mahmood-alhashmi-152086258/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/mahmood-alhashmi-152086258/</a></div>
-</div></div></div></div></section>
-<footer class="footer"><div class="container">© 2026 Mahmood Alhashmi. Built as a static GitHub Pages portfolio.</div></footer>
-</body></html>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 56px 20px;
+    }
+
+    h1, h2 {
+      margin: 0 0 14px;
+      line-height: 1.25;
+    }
+
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.25rem; margin-top: 34px; }
+
+    p { margin: 0 0 14px; color: var(--muted); }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 22px 0 8px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      color: #ffffff;
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .btn:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+
+    .contact, .projects {
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .contact-list li {
+      margin-bottom: 8px;
+    }
+
+    a { color: var(--accent); }
+
+    .projects ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .projects li { margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Mahmood Alhashmi</h1>
+      <p>Mechatronics, Robotics, and Embedded Systems</p>
+      <div class="actions">
+        <a class="btn" href="Mahmood_Alhashmi_CV.pdf" download>Download CV</a>
+        <a class="btn" href="Mahmood_Alhashmi_Portfolio.pdf" download>Download Portfolio</a>
+      </div>
+    </header>
+
+    <section class="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
+      <ul class="contact-list">
+        <li>Email: <a href="mailto:mahmoodalhashmi.05@gmail.com">mahmoodalhashmi.05@gmail.com</a></li>
+        <li>Phone: <a href="tel:+96895430531">+968 95430531</a></li>
+        <li>GitHub: <a href="https://github.com/MahmoodAlhashmi" target="_blank" rel="noopener noreferrer">github.com/MahmoodAlhashmi</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/mahmood-alhashmi-152086258/" target="_blank" rel="noopener noreferrer">linkedin.com/in/mahmood-alhashmi-152086258</a></li>
+      </ul>
+    </section>
+
+    <section class="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
+      <ul>
+        <li><a href="projects/autonomous-rc-car.html">Autonomous RC Car (ROS-Based System)</a></li>
+        <li><a href="projects/quadruped-ik.html">Quadruped Robot with Inverse Kinematics Control</a></li>
+        <li><a href="projects/mobile-manipulator.html">Mobile Manipulator Robot with Wireless Master Controller</a></li>
+        <li><a href="projects/basirah.html">Basirah - Smart Glasses for the Visually Impaired</a></li>
+        <li><a href="projects/alnaham.html">Alnaham - LoRa-Based Maritime Emergency Communication Device</a></li>
+        <li><a href="projects/donation-progress-door.html">Donation-Progress Automated Door System</a></li>
+        <li><a href="projects/date-processing-line.html">Date Processing Conveyor Line</a></li>
+        <li><a href="projects/educational-qna-board.html">Educational Q&amp;A Board for Teachers</a></li>
+        <li><a href="projects/reaction-time-game.html">Reaction Time Game - ATmega8 Embedded System</a></li>
+        <li><a href="projects/autonomous-turret.html">Autonomous Tracking Turret with Foam Ball Launcher</a></li>
+        <li><a href="projects/sumo-robot.html">Sumo Robot - 2025 Competition</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
