@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Alnaham – LoRa-Based Maritime Emergency Communication Device | Mahmood Alhashmi</title><meta name="description" content="Designed a maritime safety device that transmits GPS position and emergency alerts to a ground station using LoRa, with solar charging, onboard display, and emergency buttons."/><link rel="stylesheet" href="../style.css"/></head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Mahmood Alhashmi</div>
+      <div class="nav-links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+<header class="page-header"><div class="container"><a class="back-link" href="../index.html#projects">← Back to projects</a><span class="pill">Emergency beacon for fishermen, boats, and offshore use</span><h1>Alnaham – LoRa-Based Maritime Emergency Communication Device</h1><p class="muted" style="margin-top:16px;max-width:820px;">Designed a maritime safety device that transmits GPS position and emergency alerts to a ground station using LoRa, with solar charging, onboard display, and emergency buttons.</p></div></header>
+<section style="padding-top:18px;"><div class="container"><img class="project-image" src="../images/alnaham.svg" alt="Alnaham – LoRa-Based Maritime Emergency Communication Device image"/></div></section>
+<section><div class="container detail-grid">
+<div class="detail-card"><div class="section-head" style="margin-bottom:18px;"><h2 style="font-size:1.6rem;">Project Details</h2></div><div class="tags" style="margin-bottom:18px;"><span class="tag">LoRa</span><span class="tag">GPS</span><span class="tag">ESP32</span><span class="tag">Solar Power</span><span class="tag">Python</span></div>
+<h3>System Architecture</h3><p>Alnaham combines a LoRa module, GPS receiver, status display, five emergency buttons, temperature and humidity sensing, battery storage, and solar charging in one standalone device. During normal operation the system transmits position data every 30 seconds. When a user presses an emergency button, it immediately sends the current GPS location together with the corresponding emergency message. A LoRa receiver at the ground station forwards the data to a Python-based monitoring application.</p>
+<h3 style="margin-top:22px;">Technical Decisions</h3><p>LoRa was selected because it supports long-range, low-power communication suitable for offshore operation. GPS was integrated to ensure all emergency messages include location data. A local display was added so the user can see coordinates and device status. Solar charging improves endurance during extended field use. The receiving side was implemented in Python to allow flexible data processing and future expansion.</p>
+<h3 style="margin-top:22px;">Challenges</h3><p>The main challenges included maintaining reliable long-range communication, combining live GPS data with emergency triggers, managing battery and solar charging behavior, designing a simple but effective five-button emergency interface, and processing received maritime data into a usable monitoring application.</p>
+<h3 style="margin-top:22px;">Results</h3><p>The final system successfully transmitted both periodic GPS updates and event-driven emergency alerts from sea to shore. It combined wireless communication, sensing, embedded control, and software processing into a practical maritime safety prototype.</p></div>
+<div class="detail-card"><div class="section-head" style="margin-bottom:16px;"><h2 style="font-size:1.35rem;">Highlights</h2></div><ul class="detail-list"><li>Sends GPS updates every 30 seconds during normal operation.</li><li>Immediately transmits location and emergency type when a button is pressed.</li><li>Includes battery, solar charging, environmental sensing, and status display.</li><li>Ground station processes incoming data in a Python application.</li></ul><div style="margin-top:24px;"><a class="btn btn-primary" href="../index.html#contact">Get in touch</a></div></div>
+</div></section>
+<footer class="footer"><div class="container">© 2026 Mahmood Alhashmi. <a class="link" href="../index.html#contact">Contact</a></div></footer></body></html>

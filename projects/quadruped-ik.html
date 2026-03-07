@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Quadruped Robot with Inverse Kinematics Control | Mahmood Alhashmi</title><meta name="description" content="Designed and built a 12-DOF quadruped robot using analytical inverse kinematics to enable position-level foot control, body pose transformations, and IMU-based orientation sensing."/><link rel="stylesheet" href="../style.css"/></head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Mahmood Alhashmi</div>
+      <div class="nav-links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+<header class="page-header"><div class="container"><a class="back-link" href="../index.html#projects">← Back to projects</a><span class="pill">12-DOF quadruped with Cartesian foot control</span><h1>Quadruped Robot with Inverse Kinematics Control</h1><p class="muted" style="margin-top:16px;max-width:820px;">Designed and built a 12-DOF quadruped robot using analytical inverse kinematics to enable position-level foot control, body pose transformations, and IMU-based orientation sensing.</p></div></header>
+<section style="padding-top:18px;"><div class="container"><img class="project-image" src="../images/quadruped-ik.svg" alt="Quadruped Robot with Inverse Kinematics Control image"/></div></section>
+<section><div class="container detail-grid">
+<div class="detail-card"><div class="section-head" style="margin-bottom:18px;"><h2 style="font-size:1.6rem;">Project Details</h2></div><div class="tags" style="margin-bottom:18px;"><span class="tag">ESP32</span><span class="tag">Inverse Kinematics</span><span class="tag">IMU</span><span class="tag">Servo Control</span><span class="tag">Embedded Systems</span></div>
+<h3>System Architecture</h3><p>The robot consists of four legs with three servos per leg for hip yaw, hip pitch, and knee motion, giving twelve total degrees of freedom. Analytical inverse kinematics computes joint angles from desired foot positions in Cartesian space. Body-frame translation and rotation logic adjusts leg targets to preserve ground contact during posture changes. An ESP32 acts as the embedded controller while a connected PC supports debugging and high-level command input.</p>
+<h3 style="margin-top:22px;">Technical Decisions</h3><p>Analytical inverse kinematics was used instead of lookup tables to reduce computational overhead and improve scalability. Body motion was structured as transformations in the body frame before mapping into individual leg frames, making posture control cleaner. Servo update timing was arranged carefully to reduce jitter across all twelve channels.</p>
+<h3 style="margin-top:22px;">Challenges</h3><p>The main challenges included deriving the 3-DOF IK equations correctly, handling unreachable target positions and singularities, compensating for mechanical backlash, working within servo torque limits, synchronizing twelve servos smoothly, and filtering IMU noise for useful orientation data.</p>
+<h3 style="margin-top:22px;">Results</h3><p>The final platform achieved a stable static stance with adjustable body height, controlled roll and pitch body adjustments, Cartesian foot positioning without manual angle tuning, synchronized twelve-servo motion, and validated IMU integration.</p></div>
+<div class="detail-card"><div class="section-head" style="margin-bottom:16px;"><h2 style="font-size:1.35rem;">Highlights</h2></div><ul class="detail-list"><li>Implemented analytical IK for direct foot placement in Cartesian space.</li><li>Added body translation and rotation control for posture adjustment.</li><li>Synchronized twelve servos while minimizing visible jitter.</li><li>Integrated IMU sensing for orientation measurement and future stabilization.</li></ul><div style="margin-top:24px;"><a class="btn btn-primary" href="../index.html#contact">Get in touch</a></div></div>
+</div></section>
+<footer class="footer"><div class="container">© 2026 Mahmood Alhashmi. <a class="link" href="../index.html#contact">Contact</a></div></footer></body></html>

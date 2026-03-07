@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#12324d"/><stop offset="60%" stop-color="#091523"/><stop offset="100%" stop-color="#174148"/></linearGradient></defs>
+<rect width="1200" height="700" fill="url(#g)"/><rect x="70" y="90" width="1060" height="520" rx="32" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)"/>
+<text x="120" y="290" fill="#baf5ee" font-family="Arial" font-size="28">Emergency beacon for fishermen, boats, and offshore use</text>
+<text x="120" y="360" fill="#ffffff" font-family="Arial" font-size="52" font-weight="700">Alnaham – LoRa-Based Maritime Emergency Communication Device</text>
+<text x="120" y="460" fill="#9cb0c8" font-family="Arial" font-size="28">Replace this placeholder with your project image.</text></svg>

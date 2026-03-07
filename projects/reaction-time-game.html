@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Reaction Time Game – ATmega8 Embedded System | Mahmood Alhashmi</title><meta name="description" content="Built a reaction time measurement system around the ATmega8 that integrates analog input, digital I/O, timers, interrupts, PWM, EEPROM, I²C communication, and UART debugging into one embedded application."/><link rel="stylesheet" href="../style.css"/></head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Mahmood Alhashmi</div>
+      <div class="nav-links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+<header class="page-header"><div class="container"><a class="back-link" href="../index.html#projects">← Back to projects</a><span class="pill">Register-level embedded game with timers, ADC, EEPROM, and I²C</span><h1>Reaction Time Game – ATmega8 Embedded System</h1><p class="muted" style="margin-top:16px;max-width:820px;">Built a reaction time measurement system around the ATmega8 that integrates analog input, digital I/O, timers, interrupts, PWM, EEPROM, I²C communication, and UART debugging into one embedded application.</p></div></header>
+<section style="padding-top:18px;"><div class="container"><img class="project-image" src="../images/reaction-time-game.svg" alt="Reaction Time Game – ATmega8 Embedded System image"/></div></section>
+<section><div class="container detail-grid">
+<div class="detail-card"><div class="section-head" style="margin-bottom:18px;"><h2 style="font-size:1.6rem;">Project Details</h2></div><div class="tags" style="margin-bottom:18px;"><span class="tag">ATmega8</span><span class="tag">Embedded C</span><span class="tag">ADC</span><span class="tag">PWM</span><span class="tag">EEPROM</span><span class="tag">I²C</span></div>
+<h3>System Architecture</h3><p>The system uses six gameplay push buttons, one start/stop button through an external interrupt, and a potentiometer connected to the ADC for dynamic difficulty control. An ATmega8 handles processing, with Timer0 measuring reaction time and Timer1 generating PWM for a servo indicator. EEPROM stores high-score data across power cycles. Outputs include six LEDs, a 16×2 I²C LCD showing score and settings, and a servo motor indicating difficulty.</p>
+<h3 style="margin-top:22px;">Technical Decisions</h3><p>Hardware timers were used instead of delay-based timing for accurate reaction measurement. State machine logic prevented invalid transitions during gameplay. ADC input was used to change difficulty dynamically. PWM via Timer1 controlled the servo, and EEPROM storage preserved the high score after power loss. Software debouncing reduced false button triggers.</p>
+<h3 style="margin-top:22px;">Challenges</h3><p>Challenges included software I²C timing issues affecting LCD reliability, blocking delays interfering with real-time behavior, button bounce causing false triggers, invalid input detection, and state conflicts during rapid user interaction.</p>
+<h3 style="margin-top:22px;">Results</h3><p>The final system achieved accurate millisecond-level reaction timing, dynamic difficulty control, persistent high-score storage, and successful integration of ADC, timers, interrupts, PWM, I²C, UART, and EEPROM into one stable embedded application.</p></div>
+<div class="detail-card"><div class="section-head" style="margin-bottom:16px;"><h2 style="font-size:1.35rem;">Highlights</h2></div><ul class="detail-list"><li>Measures reaction time between LED stimulus and user response.</li><li>Uses hardware timers for accuracy and PWM for servo indication.</li><li>Stores high score in EEPROM and adjusts difficulty using a potentiometer.</li><li>Demonstrates stable real-time behavior using direct register-level programming.</li></ul><div style="margin-top:24px;"><a class="btn btn-primary" href="../index.html#contact">Get in touch</a></div></div>
+</div></section>
+<footer class="footer"><div class="container">© 2026 Mahmood Alhashmi. <a class="link" href="../index.html#contact">Contact</a></div></footer></body></html>

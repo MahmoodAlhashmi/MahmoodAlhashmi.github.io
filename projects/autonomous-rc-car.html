@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Autonomous RC Car (ROS-Based System) | Mahmood Alhashmi</title><meta name="description" content="Converted a standard RC car into an autonomous navigation platform for the Unmanned Vehicle System Competition (UVS26), integrating LiDAR, stereo depth sensing, distributed embedded control, and ROS-based navigation."/><link rel="stylesheet" href="../style.css"/></head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Mahmood Alhashmi</div>
+      <div class="nav-links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+<header class="page-header"><div class="container"><a class="back-link" href="../index.html#projects">← Back to projects</a><span class="pill">LiDAR + OAK-D + ROS autonomous navigation platform</span><h1>Autonomous RC Car (ROS-Based System)</h1><p class="muted" style="margin-top:16px;max-width:820px;">Converted a standard RC car into an autonomous navigation platform for the Unmanned Vehicle System Competition (UVS26), integrating LiDAR, stereo depth sensing, distributed embedded control, and ROS-based navigation.</p></div></header>
+<section style="padding-top:18px;"><div class="container"><img class="project-image" src="../images/autonomous-rc-car.svg" alt="Autonomous RC Car (ROS-Based System) image"/></div></section>
+<section><div class="container detail-grid">
+<div class="detail-card"><div class="section-head" style="margin-bottom:18px;"><h2 style="font-size:1.6rem;">Project Details</h2></div><div class="tags" style="margin-bottom:18px;"><span class="tag">ROS</span><span class="tag">Jetson Orin Nano</span><span class="tag">ESP32</span><span class="tag">LiDAR</span><span class="tag">OAK-D</span><span class="tag">Pure Pursuit</span></div>
+<h3>System Architecture</h3><p>The system was divided into high-level and low-level control subsystems. A Jetson Orin Nano running ROS processed LiDAR and depth data, executed navigation algorithms, and published steering and velocity commands. A dedicated ESP32 handled steering servo control and ESC throttle control, isolating actuation from perception compute load. The perception stack used a 2D LiDAR for obstacle detection and an OAK-D depth camera for spatial awareness, with ROS nodes structured for modular debugging and tuning.</p>
+<h3 style="margin-top:22px;">Technical Decisions</h3><p>Follow-the-Gap was selected instead of full SLAM for reactive obstacle avoidance because it offered lower computational cost under competition constraints. High-level and low-level control were separated to reduce motor jitter and improve responsiveness. Steering remapping was calibrated from measured mechanical limits rather than assumed linear response, improving directional accuracy.</p>
+<h3 style="margin-top:22px;">Challenges</h3><p>Major challenges included steering asymmetry, Pure Pursuit instability from the short wheelbase, oscillation in narrow passages, and latency between perception and actuation. These were addressed through steering calibration, navigation parameter tuning, smoothing filters, and serial/ROS flow optimization.</p>
+<h3 style="margin-top:22px;">Results</h3><p>The final system achieved stable wall following and obstacle avoidance, eliminated steering asymmetry through calibration, reduced oscillation after tuning, and demonstrated full autonomous operation in a competition-style environment.</p></div>
+<div class="detail-card"><div class="section-head" style="margin-bottom:16px;"><h2 style="font-size:1.35rem;">Highlights</h2></div><ul class="detail-list"><li>Jetson Orin Nano handled perception and navigation algorithms.</li><li>ESP32 controlled steering servo and ESC throttle.</li><li>Implemented Follow-the-Gap, Wall Following, and Pure Pursuit under embedded constraints.</li><li>Calibrated steering nonlinearity and reduced oscillation through tuning and filtering.</li></ul><div style="margin-top:24px;"><a class="btn btn-primary" href="../index.html#contact">Get in touch</a></div></div>
+</div></section>
+<footer class="footer"><div class="container">© 2026 Mahmood Alhashmi. <a class="link" href="../index.html#contact">Contact</a></div></footer></body></html>

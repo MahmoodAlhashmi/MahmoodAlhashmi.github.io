@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mobile Manipulator Robot with Wireless Master Controller | Mahmood Alhashmi</title><meta name="description" content="Built a distributed robotic platform consisting of a mecanum-wheel mobile base, dual robotic arms, and a wireless master controller with encoder-based arm mirroring for intuitive teleoperation."/><link rel="stylesheet" href="../style.css"/></head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Mahmood Alhashmi</div>
+      <div class="nav-links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+<header class="page-header"><div class="container"><a class="back-link" href="../index.html#projects">← Back to projects</a><span class="pill">Holonomic base + dual-arm teleoperation over ESP-NOW</span><h1>Mobile Manipulator Robot with Wireless Master Controller</h1><p class="muted" style="margin-top:16px;max-width:820px;">Built a distributed robotic platform consisting of a mecanum-wheel mobile base, dual robotic arms, and a wireless master controller with encoder-based arm mirroring for intuitive teleoperation.</p></div></header>
+<section style="padding-top:18px;"><div class="container"><img class="project-image" src="../images/mobile-manipulator.svg" alt="Mobile Manipulator Robot with Wireless Master Controller image"/></div></section>
+<section><div class="container detail-grid">
+<div class="detail-card"><div class="section-head" style="margin-bottom:18px;"><h2 style="font-size:1.6rem;">Project Details</h2></div><div class="tags" style="margin-bottom:18px;"><span class="tag">ESP32</span><span class="tag">ESP-NOW</span><span class="tag">Mecanum Wheels</span><span class="tag">Teleoperation</span><span class="tag">Rotary Encoders</span></div>
+<h3>System Architecture</h3><p>The system includes a wireless master controller with a joystick and two encoder-equipped physical arms, a holonomic mecanum-wheel base controlled by one ESP32, and a dual-arm manipulation subsystem controlled by another ESP32. Controller encoder data is transmitted in real time using ESP-NOW and mirrored on the robot side. The base supports forward, lateral, and rotational motion while the arm subsystem converts encoder positions into motor commands and synchronizes dual-arm motion.</p>
+<h3 style="margin-top:22px;">Technical Decisions</h3><p>ESP-NOW was selected over standard Wi‑Fi because it provides lower latency and simpler peer-to-peer communication for teleoperation. Base and arm control were separated onto different ESP32 boards to reduce timing conflicts and wiring complexity. Encoder-based mirroring was chosen instead of button or velocity commands to create more intuitive position-level control.</p>
+<h3 style="margin-top:22px;">Challenges</h3><p>Challenges included synchronizing multiple ESP32 boards reliably, preventing packet timing jitter, coordinating four mecanum wheels without drift, maintaining stability with a higher center of gravity, synchronizing dual-arm motion without lag, and managing heavy wiring from multiple drivers and actuators.</p>
+<h3 style="margin-top:22px;">Results</h3><p>The final system demonstrated real-time wireless teleoperation, coordinated holonomic movement, mirrored encoder-based arm control, and a stable modular distributed architecture validated through subsystem-level testing.</p></div>
+<div class="detail-card"><div class="section-head" style="margin-bottom:16px;"><h2 style="font-size:1.35rem;">Highlights</h2></div><ul class="detail-list"><li>Wireless controller used joystick input and physical arm encoders for mirroring.</li><li>Dedicated controllers separated base motion from manipulation control.</li><li>Enabled real-time teleoperation with modular multi-ESP architecture.</li><li>Improved reliability by reducing timing conflicts across subsystems.</li></ul><div style="margin-top:24px;"><a class="btn btn-primary" href="../index.html#contact">Get in touch</a></div></div>
+</div></section>
+<footer class="footer"><div class="container">© 2026 Mahmood Alhashmi. <a class="link" href="../index.html#contact">Contact</a></div></footer></body></html>
